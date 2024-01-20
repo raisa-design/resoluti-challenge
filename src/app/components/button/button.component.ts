@@ -1,4 +1,5 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { ButtonVariant } from '../../types/ButtonVariant';
 
 @Component({
   selector: 'app-button',
@@ -9,4 +10,12 @@ import { Component, Input, input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input({ required: true }) text!: string;
+  @Input({ required: false }) variant?: ButtonVariant = ButtonVariant.default;
+  @Output() change: EventEmitter<any> = new EventEmitter<any>();
+
+
+  onChange(element: Event) {
+    this.change.emit(element);
+  }
+
 }
