@@ -12,4 +12,6 @@ export class InputComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: false }) type?: string = 'text';
   @Input({ required: false }) placeholder?: string = '';
+
+  public mask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
 }
