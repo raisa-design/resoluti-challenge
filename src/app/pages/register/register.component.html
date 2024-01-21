@@ -1,10 +1,10 @@
 <section class="w-full h-screen flex justify-center items-center">
-    <div class="flex gap-x-10 bg-stone-100 p-6 rounded-lg shadow-lg max-w-screen-md">
-        <div class="flex flex-col gap-4">
-            <h1 class="text-3xl">
+    <div class="flex gap-x-10 bg-stone-100 p-6 rounded-lg shadow-lg max-w-screen-md sm:w-8/12 md:w-9/12 2xl:w-5/12  lg:w-8/12 w-11/12 flex-col-reverse md:flex-row">
+        <div class="flex flex-col gap-4 w-full md:w-9/12">
+            <h1 class="text-3xl hidden md:block"> 
                 Cadastrar Usuário
             </h1>
-            <div class="flex gap-2">
+            <div class="flex gap-2"> 
                 <app-input label="Nome de usuário" name="username" placeholder="Insira seu nome" />
                 <app-input label="Email" name="email" placeholder="Insira seu email" />
             </div>  
@@ -16,9 +16,12 @@
                 <app-button  text="Cadastrar Usuário"/>
             </div>
         </div>  
-        <div>
+        <div class="flex flex-col justify-center items-center gap-2 mb-4">
+            <h1 class="text-3xl block md:hidden"> 
+                Cadastrar Usuário
+            </h1>
             <app-file-input name="userimage" (changeFile)="showPreview($event)"  *ngIf="!imageURL || imageURL == ''" />
-            <div *ngIf="imageURL && imageURL !== ''" class="relative">
+            <div *ngIf="imageURL && imageURL !== ''" class="relative" >
                 <button class="absolute -right-3 -top-3 hover:scale-125" (click)="removeImage()">
                     <img src="/assets/close.png" height="32px" width="32px" />
                 </button>
